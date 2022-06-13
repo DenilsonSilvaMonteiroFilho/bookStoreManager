@@ -22,9 +22,6 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /*FICAR DE OLHO NOS POSIVEIS ERROS DO NULLABLE = FALSE 
-    * COMO JA OCORREU ANTERIOR MENTE
-    */
     @Column(nullable = false, unique = true)
     private String name;
 

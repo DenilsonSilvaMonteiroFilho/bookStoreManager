@@ -36,7 +36,8 @@ public class Book {
     @Column(nullable = false)
     private Integer chapters;
 
-    @Column(nullable = false)
+    /* O valor do Ibsn eh dado como null mesmo incerindo o valor */
+    @Column(nullable = true)
     private String isbn;
 
     @Column(name = "publisher_name", nullable = false, unique = true)
