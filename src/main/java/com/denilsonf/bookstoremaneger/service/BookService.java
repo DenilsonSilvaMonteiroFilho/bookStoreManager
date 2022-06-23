@@ -11,13 +11,13 @@ import com.denilsonf.bookstoremaneger.repository.BookRepository;
 
 @Service
 public class BookService {
-    
+
     private BookRepository bookRepository;
 
     private final BookMapper bookMapper = BookMapper.INSTANCE;
 
     @Autowired
-    public BookService(BookRepository bookRepository){
+    public BookService(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
 
