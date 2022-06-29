@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.github.javafaker.Faker;
+import com.denilsonf.bookstoremaneger.dto.AuthorDTO;
 import com.denilsonf.bookstoremaneger.dto.BookDTO;
 import com.denilsonf.bookstoremaneger.entity.Book;
 
@@ -12,12 +13,12 @@ import static com.denilsonf.bookstoremaneger.utils.AuthorUtils.createFakeAuthor;
 import static com.denilsonf.bookstoremaneger.utils.AuthorUtils.createFakeAuthorDTO;
 import static com.denilsonf.bookstoremaneger.utils.AuthorUtils.createFakeAuthorFrom;
 
-
 public class BookUtils {
 
     private static final Faker faker = Faker.instance();
 
     public static BookDTO createFakeBookDTO() {
+        createFakeAuthorDTO();
         return BookDTO.builder()
                 .id(faker.number().randomNumber())
                 .name(faker.book().title())
@@ -25,7 +26,7 @@ public class BookUtils {
                 .chapters(faker.number().numberBetween(1, 20))
                 .isbn("0-596-52068-9")
                 .publisherName(faker.book().publisher())
-                .author(createFakeAuthorDTO())
+                .author(null)
                 .build();
     }
 
@@ -49,7 +50,7 @@ public class BookUtils {
                 .chapters(bookDTO.getChapters())
                 .isbn(bookDTO.getIsbn())
                 .publisherName(bookDTO.getPublisherName())
-                .author(createFakeBookFrom(bookDTO.getAuthor()))
+                .author(null)
                 .build();
     }
 

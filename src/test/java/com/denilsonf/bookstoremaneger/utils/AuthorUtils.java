@@ -1,11 +1,11 @@
 package com.denilsonf.bookstoremaneger.utils;
 
+import com.github.javafaker.Faker;
 import com.denilsonf.bookstoremaneger.dto.AuthorDTO;
 import com.denilsonf.bookstoremaneger.entity.Author;
-import com.github.javafaker.Faker;
-
 
 public class AuthorUtils {
+
     private static final Faker faker = Faker.instance();
 
     public static AuthorDTO createFakeAuthorDTO() {
